@@ -6,7 +6,7 @@
 
 <meta charset="utf-8"> 
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content=" width = device-width, initial-scale=1">
 
 <meta name="description" content="BBC iPlayer">
 
@@ -22,9 +22,10 @@
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 
-<link rel="stylesheet" href="/styles/w3.css">
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 
-  
+<link rel="icon" type="image/png" href="images/bbc_logo_icon.png">
+
 <title>Heroku BBC iPlayer | TV Programmes </title>
 
 </head>
@@ -59,9 +60,56 @@
 
 <div class="w3-container">
 
+<p>{{programme.subtitle}}</p>
+
+<hr>
+
   <img src="images/bbc_logo.png" alt="BBC iPlayer logo" class="w3-left">
 
-  <p>{{programme.synopses.large}}</p>
+
+
+   <p class="display_large"> 
+
+    {{ 
+
+        
+
+             programme.synopses.large
+
+
+
+    }} 
+
+   </p>
+
+   <p class="display_medium"> 
+
+    {{ 
+
+        
+
+             programme.synopses.medium
+
+
+
+    }} 
+
+   </p>
+
+   <p class="display_small"> 
+
+    {{ 
+
+        
+
+              programme.synopses.small
+
+
+
+    }} 
+
+   </p>
+
 
 </div>
 
