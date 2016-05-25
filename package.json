@@ -42,6 +42,7 @@
     "connect-modrewrite": "latest",
     "consolidate": "latest",
     "express": "4.13.4",
+    "forever": "^0.15.1",
     "gulp": "^3.9.1",
     "lodash": "latest",
     "meanio": "^0.9.0",
