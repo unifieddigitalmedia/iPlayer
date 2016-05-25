@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8"> 
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="description" content="BBC iPlayer">
+
+<meta name="keywords" content="BBC, iPlayer, Programmes">
+
+<meta name="author" content="Machel Slack">
+
+<link rel="stylesheet" type="text/css" href="/styles/main.css">
+
+<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+
+  
+<title>BBC iPlayer | TV Programmes </title>
+
+</head>
+
+<body ng-app="iPlayer" onresize="adjustWidthOfMainWindow()" ng-cloak>
+
+
+
+<div ng-controller = "programmes" >
+
+<ul class="alphabetpicker" ng-init="init()" >
+
+<li ng-repeat="letter in alphabet" ng-click="currentLetter($index,$event)" > <a  class="letter_idx">{{letter.UpperCase}} </a> </li> 
+
+</ul>
+
+
+
+<section class="programme_container">
+
+<div class="inner_programme_container" >
+
+<div class="w3-card-4" ng-repeat="programme in list">
+
+&nbsp;
+
+<header class="w3-container w3-light-grey">
+
+ <h3>{{programme.title}}</h3>
+
+</header>
+
+<div class="w3-container">
+
+  <img src="images/bbc_logo.png" alt="BBC iPlayer logo" class="w3-left">
+
+  <p>{{programme.synopses.large}}</p>
+
+</div>
+
+</br>
+
+<button class="w3-btn-block w3-dark-grey more_btn" ng-click="programmeMore()"> Find Out More</button>
+
+</div>
+
+</br>
+
+</div>
+
+<div class="pagination_div" >
+
+<ul class="pagination">
+
+  <li ><a ng-click="plusPage(-1)">«</a></li>
+
+
+  <li ng-repeat="page in totalPages(listcount) track by $index" > <a  class="pag_idx" ng-click="currentPage($index+1,$event)">  {{$index + 1 }} </a></li>
+
+
+  <li><a  ng-click="plusPage(1)" >»</a></li>
+
+
+</ul>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+</body>
+
+
+<script src="/jquery/dist/jquery.min.js" ></script>
+
+<script src="/bootstrap/dist/js/bootstrap.min.js" ></script>
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+<script src="/angular/angular.min.js" ></script>
+
+<script src="/angular-resource/angular-resource.js" ></script>
+
+
+
+<script src="/scripts/main.js" ></script>
+
+
+</html>
