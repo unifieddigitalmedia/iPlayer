@@ -18,8 +18,6 @@ app.use(express.static(__dirname + '/'));
 
 app.use(express.static('bower_components'));
 
-var waterfall = require('async-waterfall');
-
 
 app.get('/', function (req, res) {
 
