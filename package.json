@@ -3,8 +3,8 @@
   "description": "MEAN.io: A fullstack JavaScript framework powered by MongoDB, ExpressJS, AngularJS, NodeJS.",
   "version": "0.6.1",
   "engines": {
-     "node": "6.2.0",
-     "npm": "3.8.9"
+    "node": "6.2.0",
+    "npm": "3.8.9"
   },
   "private": false,
   "author": "Linnovate <mean@linnovate.net>",
@@ -36,12 +36,13 @@
     "angular-ui-select": "^0.12.100",
     "body-parser": "latest",
     "bootstrap": "latest",
-      "bower": "latest",
+    "bower": "^1.7.9",
     "compression": "latest",
     "connect-flash": "latest",
     "connect-modrewrite": "latest",
     "consolidate": "latest",
-    "express": "latest",
+    "express": "4.13.4",
+    "gulp": "^3.9.1",
     "lodash": "latest",
     "meanio": "^0.9.0",
     "meanio-admin": "git://github.com/linnovate/meanio-admin.git",
