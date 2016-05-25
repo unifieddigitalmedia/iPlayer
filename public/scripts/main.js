@@ -94,15 +94,18 @@ $scope.listcount = Math.round(Number(response.data.atoz_programmes.count) / 20 )
 $scope.list = response.data.atoz_programmes.elements;
 
 
-    });
-
-
-
 $(".letter_idx").removeClass("letter_active");
 
 document.getElementsByClassName("letter_idx")[para].classList.add("letter_active");
 
 document.getElementsByClassName("pag_idx")[$scope.page-1].classList.add("active");
+
+
+
+    });
+
+
+
 
 
 
@@ -123,10 +126,8 @@ $scope.currentPage = function (para,event) {
 
   $scope.page = para;
 
-  if ($scope.page  > $scope.listcount) {$scope.page = $scope.listcount} 
 
-  if ($scope.page  < 1) {$scope.page  = 1 } ;
-
+  if ($scope.page <= $scope.listcount && $scope.page  >= 1 ) {
 
 
 $http.get("https://ibl.api.bbci.co.uk/ibl/v1/atoz/"+$scope.letter+"/programmes?page="+$scope.page).then(function(response) {
@@ -135,13 +136,25 @@ $scope.listcount = Math.round(Number(response.data.atoz_programmes.count) / 20 )
 
 $scope.list = response.data.atoz_programmes.elements;
 
+$(".pag_idx").removeClass("active");
+
+document.getElementsByClassName("pag_idx")[$scope.page-1].classList.toggle("active");
+
+
+
 
     });
 
 
-$(".pag_idx").removeClass("active");
 
-document.getElementsByClassName("pag_idx")[$scope.page-1].classList.toggle("active");
+
+
+  }
+
+
+
+
+
 
 
 }
@@ -155,8 +168,27 @@ alert("Further informaion is not avaiable at this time.");
 
 $scope.plusPage = function(para) {
 
+  
 
-$scope.currentPage($scope.page += para);
+$scope.page += para;
+
+  if ($scope.page  > $scope.listcount) {
+
+
+  	$scope.page = $scope.listcount
+
+
+  } 
+
+  else if ($scope.page  < 1) {
+
+  	$scope.page  = 1 
+
+
+  } ;
+
+
+$scope.currentPage($scope.page);
 
 
 }
