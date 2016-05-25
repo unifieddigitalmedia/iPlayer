@@ -97,36 +97,6 @@ $scope.list = response.data.atoz_programmes.elements;
     });
 
 
-/*
-var resource = $resource(':base_uri/ibl/v1/atoz/:letter/programmes?page=:page',{
-
-          base_uri:"https://ibl.api.bbci.co.uk",
-          letter:"@letter",
-          page:"@page",
-         
-
-});
-
-
-var programme_list = resource.query(
-
-{
-
-          letter:$scope.alphabet[para].LowerCase,
-          page:$scope.page,
-        
-
-
-}, function() {  
-
-
-$scope.listcount = Math.round(Number(programme_list.atoz_programmes.count) / 20 );
-
-$scope.list = programme_list.atoz_programmes.elements;
-
-
-});
-*/
 
 $(".letter_idx").removeClass("letter_active");
 
