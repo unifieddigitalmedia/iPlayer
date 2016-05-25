@@ -2,6 +2,10 @@
   "name": "mean",
   "description": "MEAN.io: A fullstack JavaScript framework powered by MongoDB, ExpressJS, AngularJS, NodeJS.",
   "version": "0.6.1",
+  "engines": {
+     "node": "6.2.0",
+     "npm": "3.8.9"
+  },
   "private": false,
   "author": "Linnovate <mean@linnovate.net>",
   "contributors": "https://github.com/linnovate/mean/graphs/contributors",
